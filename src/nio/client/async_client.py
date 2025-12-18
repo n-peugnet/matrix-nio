@@ -2565,7 +2565,7 @@ class AsyncClient(Client):
             room_id: The room id or alias of the room to join.
         """
         method, path = Api.join(self.access_token, room_id)
-        return await self._send(JoinResponse, method, path)
+        return await self._send(JoinResponse, method, path, "{}")
 
     @logged_in_async
     async def room_knock(
